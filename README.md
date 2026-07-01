@@ -16,7 +16,7 @@ I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practica
 
 All of it plugs into Claude Code, Cursor, Codex and other agents.
 
-**Star the one you'd actually use.** Then come find me at [aifrontier.tech](https://aifrontier.tech), or on [Telegram](https://t.me/gorilla_under_hood), where I write up how the whole thing gets built.
+**Star the one you'd actually use.** Then come find me at [aifrontier.tech](https://aifrontier.tech), on [LinkedIn](https://www.linkedin.com/in/ilyautov), or on [Telegram](https://t.me/gorilla_under_hood), where I write up how the whole thing gets built.
 
 <details>
 <summary>🇷🇺 По-русски</summary>
@@ -39,6 +39,6 @@ All of it plugs into Claude Code, Cursor, Codex and other agents.
 
 Всё дружит с Claude Code, Cursor, Codex и другими агентами.
 
-**Поставь звезду тому, чем реально будешь пользоваться.** А если интересно, как это всё собирается, я пишу об этом в [телеграме](https://t.me/gorilla_under_hood) и на [aifrontier.tech](https://aifrontier.tech).
+**Поставь звезду тому, чем реально будешь пользоваться.** А если интересно, как это всё собирается, я пишу об этом в [телеграме](https://t.me/gorilla_under_hood) и на [aifrontier.tech](https://aifrontier.tech). Ещё есть [LinkedIn](https://www.linkedin.com/in/ilyautov).
 
 </details>
