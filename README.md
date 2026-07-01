@@ -1,36 +1,44 @@
 ### Ilya Utov · Илья Утов
 
-I build open-source AI tools — agent skills and MCP servers, mostly for Russian-language and small-business workflows. Everything is MIT-licensed.
+I build open-source AI tools that do actual work, not demos. Agent skills and MCP servers, mostly for Russian-language and small-business tasks. The math runs in code, the data comes from real registries, and it all ships under MIT.
 
-Founder of **[AI Frontier](https://aifrontier.tech)** — a small lab shipping practical AI for real businesses.
+I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practical AI into real companies.
 
-**Projects**
+**Stuff that already works**
 
-- **[humanizer-ru](https://github.com/ilyautov/humanizer-ru)** — strips AI fingerprints from Russian text: bureaucratese, calques, ChatGPT/Claude tells.
-- **[small-business-ru](https://github.com/ilyautov/small-business-ru)** — 34 skills for Russian SMBs: taxes, finance, counterparty checks. Numbers computed by code, data from real registries.
-- **[marketplaces-mcp-ru](https://github.com/ilyautov/marketplaces-mcp-ru)** — MCP server for Wildberries & Ozon: sales, stock, prices, finance via Seller API.
-- **[humanizer-it](https://github.com/ilyautov/humanizer-it)** — humanizer-ru, but for Italian.
+[**humanizer-ru**](https://github.com/ilyautov/humanizer-ru) · ⭐115. Strips the AI fingerprint out of Russian text: bureaucratese, English calques, the tells that give ChatGPT and Claude away. This README went through it.
 
-Works with Claude Code, Cursor, Codex and other agents.
+[**small-business-ru**](https://github.com/ilyautov/small-business-ru). 34 skills for Russian small businesses: taxes, cash, checking a counterparty by its tax ID. The numbers get computed, not guessed.
 
-📮 [aifrontier.tech](https://aifrontier.tech) · [@gorilla_under_hood](https://t.me/gorilla_under_hood)
+[**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru). Wires Claude or Cursor straight into Wildberries and Ozon: sales, stock, prices, finance over the Seller API.
+
+[**humanizer-it**](https://github.com/ilyautov/humanizer-it). Same as humanizer-ru, for Italian.
+
+All of it plugs into Claude Code, Cursor, Codex and other agents.
+
+**Star the one you'd actually use.** Then come find me at [aifrontier.tech](https://aifrontier.tech), or on [Telegram](https://t.me/gorilla_under_hood), where I write up how the whole thing gets built.
 
 <details>
 <summary>🇷🇺 По-русски</summary>
 
 <br>
 
-Делаю открытые AI-инструменты — скиллы для агентов и MCP-серверы, в основном для русскоязычных задач и малого бизнеса. Всё под лицензией MIT.
+Пишу открытые AI-инструменты, которые делают работу, а не крутят демо. Скиллы для агентов и MCP-серверы, в основном под русский язык и малый бизнес. Считает всё код, данные берутся из настоящих реестров, лицензия MIT.
 
-Основатель лаборатории **[AI Frontier](https://aifrontier.tech)** — небольшая команда, которая делает прикладной ИИ для реального бизнеса.
+Веду лабораторию [**AI Frontier**](https://aifrontier.tech): маленькая команда, которая заводит ИИ в реальные компании.
 
-**Проекты**
+**Что уже работает**
 
-- **[humanizer-ru](https://github.com/ilyautov/humanizer-ru)** — убирает следы нейросети из русского текста: канцелярит, кальки, фингерпринты ChatGPT и Claude.
-- **[small-business-ru](https://github.com/ilyautov/small-business-ru)** — 34 скилла для малого бизнеса РФ: налоги, деньги, проверка контрагента по ИНН. Числа считает код, данные — из реальных реестров.
-- **[marketplaces-mcp-ru](https://github.com/ilyautov/marketplaces-mcp-ru)** — MCP-сервер для Wildberries и Ozon: продажи, остатки, цены, финансы через Seller API.
-- **[humanizer-it](https://github.com/ilyautov/humanizer-it)** — то же, что humanizer-ru, но для итальянского.
+[**humanizer-ru**](https://github.com/ilyautov/humanizer-ru) · ⭐115. Вычищает из русского текста следы нейросети: канцелярит, кальки, обороты, по которым сразу видно ChatGPT и Claude. Этим скиллом причёсан и сам текст, который вы читаете.
 
-Работают с Claude Code, Cursor, Codex и другими агентами.
+[**small-business-ru**](https://github.com/ilyautov/small-business-ru). 34 скилла для малого бизнеса: налоги, деньги, проверка контрагента по ИНН. Цифры считает код, а не выдумывает модель.
+
+[**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru). Подключает Claude или Cursor прямо к кабинетам Wildberries и Ozon: продажи, остатки, цены, финансы через Seller API.
+
+[**humanizer-it**](https://github.com/ilyautov/humanizer-it). То же, что humanizer-ru, только для итальянского.
+
+Всё дружит с Claude Code, Cursor, Codex и другими агентами.
+
+**Поставь звезду тому, чем реально будешь пользоваться.** А если интересно, как это всё собирается, я пишу об этом в [телеграме](https://t.me/gorilla_under_hood) и на [aifrontier.tech](https://aifrontier.tech).
 
 </details>
