@@ -16,7 +16,9 @@ I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practica
 
 **Bridges into real systems (MCP)**
 
-[**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru). Wires Claude or Cursor straight into Wildberries and Ozon: sales, stock, prices, finance over the Seller API. No browser, no scraping.
+[**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru). Wires Claude or Cursor straight into Wildberries, Ozon, Yandex Market and Avito: sales, orders, stock, prices, finance over the Seller APIs. 1022 methods, no browser, no scraping. One marketplace at a time if that is all you need: [ozon-mcp-ru](https://github.com/ilyautov/ozon-mcp-ru), [wildberries-mcp-ru](https://github.com/ilyautov/wildberries-mcp-ru), [yandex-market-mcp-ru](https://github.com/ilyautov/yandex-market-mcp-ru), [avito-mcp-ru](https://github.com/ilyautov/avito-mcp-ru).
+
+[**business-mcp-ru**](https://github.com/ilyautov/business-mcp-ru). Five more servers for the systems a Russian company actually runs on: [hh.ru](https://github.com/ilyautov/hh-mcp-ru) hiring, [VK](https://github.com/ilyautov/vk-mcp-ru), the two legally binding EDI operators [Diadoc](https://github.com/ilyautov/diadoc-mcp-ru) and [SBIS](https://github.com/ilyautov/sbis-mcp-ru), and [Chestny ZNAK](https://github.com/ilyautov/chestny-znak-mcp-ru) product marking. 698 methods, one shared engine in [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core), so a safety fix lands in all of them at once.
 
 [**moysklad-mcp-ru**](https://github.com/ilyautov/moysklad-mcp-ru). The same for MoySklad: stock, orders, documents, reports, with a safety gate before anything gets written.
 
@@ -26,7 +28,7 @@ I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practica
 
 [**cordon**](https://github.com/ilyautov/cordon). A deterministic layer between untrusted content and agent actions: it removes the hidden layer, remembers where data came from, and keeps calls inside the boundaries of the intent.
 
-All of it plugs into Claude Code, Cursor, Codex and other agents.
+All of it plugs into Claude Code, Cursor, Codex and other agents. The method maps, the API keys and the errors that eat the most time are written up per service at [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) and [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/), built from the same catalogs the servers execute.
 
 **Star the one you'd actually use.** Then come find me at [aifrontier.tech](https://aifrontier.tech), on [LinkedIn](https://www.linkedin.com/in/ilyautov), or on [Telegram](https://t.me/gorilla_under_hood), where I write up how the whole thing gets built.
 
@@ -51,7 +53,9 @@ All of it plugs into Claude Code, Cursor, Codex and other agents.
 
 **Мосты к рабочим системам (MCP)**
 
-[**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru). Подключает Claude или Cursor прямо к кабинетам Wildberries и Ozon: продажи, остатки, цены, финансы через Seller API. Без браузера и парсинга.
+[**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru). Подключает Claude или Cursor прямо к кабинетам Wildberries, Ozon, Яндекс Маркета и Авито: продажи, заказы, остатки, цены, финансы через Seller API. 1022 метода, без браузера и парсинга. Нужен один маркетплейс, ставится один: [ozon-mcp-ru](https://github.com/ilyautov/ozon-mcp-ru), [wildberries-mcp-ru](https://github.com/ilyautov/wildberries-mcp-ru), [yandex-market-mcp-ru](https://github.com/ilyautov/yandex-market-mcp-ru), [avito-mcp-ru](https://github.com/ilyautov/avito-mcp-ru).
+
+[**business-mcp-ru**](https://github.com/ilyautov/business-mcp-ru). Ещё пять серверов под то, на чём держится российская компания: наём в [hh.ru](https://github.com/ilyautov/hh-mcp-ru), [VK](https://github.com/ilyautov/vk-mcp-ru), два оператора юридически значимого ЭДО [Диадок](https://github.com/ilyautov/diadoc-mcp-ru) и [СБИС](https://github.com/ilyautov/sbis-mcp-ru), маркировка в [Честном знаке](https://github.com/ilyautov/chestny-znak-mcp-ru). 698 методов и общее ядро [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core): правка безопасности чинит все сразу.
 
 [**moysklad-mcp-ru**](https://github.com/ilyautov/moysklad-mcp-ru). То же для МойСклада: остатки, заказы, документы, отчёты, с гейтом безопасности перед любой записью.
 
@@ -61,7 +65,7 @@ All of it plugs into Claude Code, Cursor, Codex and other agents.
 
 [**cordon**](https://github.com/ilyautov/cordon). Детерминированная прослойка между недоверенным содержимым и действиями агента: снимает скрытый слой, помнит, откуда пришли данные, и держит вызовы в границах намерения.
 
-Всё дружит с Claude Code, Cursor, Codex и другими агентами.
+Всё дружит с Claude Code, Cursor, Codex и другими агентами. Карты методов, где брать ключи и что значат частые ошибки, разобраны по сервисам на [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) и [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/): страницы собраны из тех же каталогов, которые исполняет сервер.
 
 **Поставь звезду тому, чем реально будешь пользоваться.** А если интересно, как это всё собирается, я пишу об этом в [телеграме](https://t.me/gorilla_under_hood) и на [aifrontier.tech](https://aifrontier.tech). Ещё есть [LinkedIn](https://www.linkedin.com/in/ilyautov).
 
