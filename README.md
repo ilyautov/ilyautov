@@ -28,6 +28,10 @@ I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practica
 
 [**cordon**](https://github.com/ilyautov/cordon). A deterministic layer between untrusted content and agent actions: it removes the hidden layer, remembers where data came from, and keeps calls inside the boundaries of the intent.
 
+[**doc2md**](https://github.com/ilyautov/doc2md). Batch-converts Word, Excel, PowerPoint, PDF, EPUB, RTF and CSV into clean Markdown before the agent reads them, so the model spends its context on the content and not on the file format.
+
+[**rusvoice**](https://github.com/ilyautov/rusvoice). Russian voice-over in your own voice. Cloning is solved by open code; what was missing is the layer before synthesis: stress marks, a brand dictionary, abbreviations read letter by letter, and a way to see what the pipeline will do to a line before you hear it.
+
 All of it plugs into Claude Code, Cursor, Codex and other agents. The method maps, the API keys and the errors that eat the most time are written up per service at [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) and [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/), built from the same catalogs the servers execute.
 
 **Star the one you'd actually use.** Then come find me at [aifrontier.tech](https://aifrontier.tech), on [LinkedIn](https://www.linkedin.com/in/ilyautov), or on [Telegram](https://t.me/gorilla_under_hood), where I write up how the whole thing gets built.
@@ -64,6 +68,10 @@ All of it plugs into Claude Code, Cursor, Codex and other agents. The method map
 [**hefest**](https://github.com/ilyautov/hefest). Химическая безопасность завода, целиком офлайн: аварийные карточки, зоны заражения, совместимость хранения, подбор СИЗ. Отказывается отвечать без оснований и не пересчитывает единицы за человека. Ошибка тут стоит здоровья, поэтому молчание лучше правдоподобной догадки.
 
 [**cordon**](https://github.com/ilyautov/cordon). Детерминированная прослойка между недоверенным содержимым и действиями агента: снимает скрытый слой, помнит, откуда пришли данные, и держит вызовы в границах намерения.
+
+[**doc2md**](https://github.com/ilyautov/doc2md). Пакетно превращает Word, Excel, PowerPoint, PDF, EPUB, RTF и CSV в чистый Markdown до того, как их прочитает агент: контекст уходит на содержание, а не на формат файла.
+
+[**rusvoice**](https://github.com/ilyautov/rusvoice). Русская озвучка своим голосом. Клонировать голос умеет открытый код, дефицитен слой перед синтезом: ударения, словарь брендов, аббревиатуры по буквам и возможность увидеть, что тракт сделает с репликой, до того как её услышишь.
 
 Всё дружит с Claude Code, Cursor, Codex и другими агентами. Карты методов, где брать ключи и что значат частые ошибки, разобраны по сервисам на [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) и [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/): страницы собраны из тех же каталогов, которые исполняет сервер.
 
