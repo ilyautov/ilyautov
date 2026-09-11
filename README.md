@@ -34,6 +34,8 @@ I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practica
 
 All of it plugs into Claude Code, Cursor, Codex and other agents. The method maps, the API keys and the errors that eat the most time are written up per service at [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) and [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/), built from the same catalogs the servers execute.
 
+Everything above sits in one list at [ilyautov.github.io](https://ilyautov.github.io/), grouped by what it does, if you'd rather scan it at a glance than scroll the repo tab.
+
 **Star the one you'd actually use.** Then come find me at [aifrontier.tech](https://aifrontier.tech), on [LinkedIn](https://www.linkedin.com/in/ilyautov), or on [Telegram](https://t.me/gorilla_under_hood), where I write up how the whole thing gets built.
 
 <details>
@@ -74,6 +76,8 @@ All of it plugs into Claude Code, Cursor, Codex and other agents. The method map
 [**rusvoice**](https://github.com/ilyautov/rusvoice). Русская озвучка своим голосом. Клонировать голос умеет открытый код, дефицитен слой перед синтезом: ударения, словарь брендов, аббревиатуры по буквам и возможность увидеть, что тракт сделает с репликой, до того как её услышишь.
 
 Всё дружит с Claude Code, Cursor, Codex и другими агентами. Карты методов, где брать ключи и что значат частые ошибки, разобраны по сервисам на [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) и [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/): страницы собраны из тех же каталогов, которые исполняет сервер.
+
+Всё перечисленное лежит одним списком на [ilyautov.github.io](https://ilyautov.github.io/), разбито по назначению: так быстрее просмотреть разом, чем листать вкладку репозиториев.
 
 **Поставь звезду тому, чем реально будешь пользоваться.** А если интересно, как это всё собирается, я пишу об этом в [телеграме](https://t.me/gorilla_under_hood) и на [aifrontier.tech](https://aifrontier.tech). Ещё есть [LinkedIn](https://www.linkedin.com/in/ilyautov).
 
