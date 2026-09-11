@@ -1,6 +1,6 @@
 ### Ilya Utov · Илья Утов
 
-I build open-source AI tools that do actual work, not demos. Agent skills, MCP servers, and one full on-prem system. The math runs in code, the data comes from real registries, and it all ships under MIT.
+I build open-source AI tools that do actual work, not demos. Agent skills, MCP servers, and one full on-prem system. The math runs in code, the data comes from real registries, and it all ships under MIT or Apache 2.0.
 
 I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practical AI into real companies.
 
@@ -43,7 +43,7 @@ Everything above sits in one list at [ilyautov.github.io](https://ilyautov.githu
 
 <br>
 
-Пишу открытые AI-инструменты, которые делают работу, а не крутят демо. Скиллы для агентов, MCP-серверы и одна цельная система, работающая внутри контура предприятия. Считает всё код, данные берутся из настоящих реестров, лицензия MIT.
+Пишу открытые AI-инструменты, которые делают работу, а не крутят демо. Скиллы для агентов, MCP-серверы и одна цельная система, работающая внутри контура предприятия. Считает всё код, данные берутся из настоящих реестров, лицензии MIT и Apache 2.0.
 
 Веду лабораторию [**AI Frontier**](https://aifrontier.tech): маленькая команда, которая заводит ИИ в реальные компании.
 
