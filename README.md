@@ -20,7 +20,7 @@ I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practica
 
 [**business-mcp-ru**](https://github.com/ilyautov/business-mcp-ru). Five more servers for the systems a Russian company actually runs on: [hh.ru](https://github.com/ilyautov/hh-mcp-ru) hiring, [VK](https://github.com/ilyautov/vk-mcp-ru), the two legally binding EDI operators [Diadoc](https://github.com/ilyautov/diadoc-mcp-ru) and [SBIS](https://github.com/ilyautov/sbis-mcp-ru), and [Chestny ZNAK](https://github.com/ilyautov/chestny-znak-mcp-ru) product marking. 698 methods, one shared engine in [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core), so a safety fix lands in all of them at once.
 
-[**moysklad-mcp-ru**](https://github.com/ilyautov/moysklad-mcp-ru). The same for MoySklad: stock, orders, documents, reports, with a safety gate before anything gets written.
+[**moysklad-mcp-ru**](https://github.com/ilyautov/moysklad-mcp-ru). The same for MoySklad, the cloud ERP most Russian retail runs its stock and trade documents in: 892 methods behind 8 generic tools, with a safety gate before anything gets written and a draft before anything gets posted.
 
 **Systems**
 
@@ -63,7 +63,7 @@ Everything above sits in one list at [ilyautov.github.io](https://ilyautov.githu
 
 [**business-mcp-ru**](https://github.com/ilyautov/business-mcp-ru). Ещё пять серверов под то, на чём держится российская компания: наём в [hh.ru](https://github.com/ilyautov/hh-mcp-ru), [VK](https://github.com/ilyautov/vk-mcp-ru), два оператора юридически значимого ЭДО [Диадок](https://github.com/ilyautov/diadoc-mcp-ru) и [СБИС](https://github.com/ilyautov/sbis-mcp-ru), маркировка в [Честном знаке](https://github.com/ilyautov/chestny-znak-mcp-ru). 698 методов и общее ядро [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core): правка безопасности чинит все сразу.
 
-[**moysklad-mcp-ru**](https://github.com/ilyautov/moysklad-mcp-ru). То же для МойСклада: остатки, заказы, документы, отчёты, с гейтом безопасности перед любой записью.
+[**moysklad-mcp-ru**](https://github.com/ilyautov/moysklad-mcp-ru). То же для МойСклада, на котором держится учёт розницы и опта: 892 метода через восемь общих инструментов, гейт безопасности перед любой записью и черновик прежде, чем документ будет проведён.
 
 **Системы**
 
