@@ -124,7 +124,7 @@ def hero():
 
 
 # ---------- карточка флагмана ----------
-def card(num, kicker, title, accent, body_rows, url, img, widget, wcss, alt, solid=".30"):
+def card(num, kicker, title, accent, body_rows, url, img, widget, wcss, alt, solid=".30", art=""):
     W, H = 840, 460
     body = f"""
 <defs>
@@ -133,7 +133,7 @@ def card(num, kicker, title, accent, body_rows, url, img, widget, wcss, alt, sol
 </defs>
 <g clip-path="url(#c)">
  <rect width="{W}" height="{H}" fill="{BG}"/>
- <image x="{W-620}" y="0" width="620" height="{H}" preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,{b64(img)}"/>
+ {f'<image x="{W-620}" y="0" width="620" height="{H}" preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,{b64(img)}"/>' if img else art}
  <rect width="{W}" height="{H}" fill="url(#f)"/>
  <text x="40" y="62" class="m" font-size="19" fill="{AMBER}">{num} / {escape(kicker)}</text>
  <text x="37" y="138" class="d" font-size="70" fill="{TEXT}">{escape(title)}</text>
@@ -275,10 +275,110 @@ def tile(group, name, num, unit, repo, bundle):
     return svg(W, H, body, "", f"{repo}: {name}, {num} {unit.lower()}")
 
 
+# ---------- раздел 06: системы и инструменты ----------
+def section(kicker, title, accent, foot, alt):
+    W, H = 1280, 210
+    body = f"""
+<defs><clipPath id="c"><rect width="{W}" height="{H}" rx="14"/></clipPath></defs>
+<g clip-path="url(#c)">
+ <rect width="{W}" height="{H}" fill="{SURFACE}"/>
+ <text x="64" y="62" class="m" font-size="18" fill="{AMBER}">{escape(kicker)}</text>
+ <text x="61" y="140" class="d" font-size="70" fill="{TEXT}">{escape(title)}<tspan fill="{AMBER}" dx="20">{escape(accent)}</tspan></text>
+ <text x="64" y="186" class="m" font-size="16" fill="{MUTED}">{escape(foot)}</text>
+ <rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{LINE}"/>
+</g>"""
+    return svg(W, H, body, "", alt)
+
+
+def systems_header():
+    return section("06 / SYSTEMS AND TOOLS", "Offline, on-prem,", "on your side.",
+                   "RUNS INSIDE THE PERIMETER · REFUSES WITHOUT GROUNDS · MIT / APACHE-2.0",
+                   "Systems and tools: hefest, consilium-principis, rusvoice, doc2md")
+
+
+def hefest():
+    css = """
+@keyframes pulse{0%,70%{opacity:1}80%{opacity:.35}90%,100%{opacity:1}}
+.p{animation:pulse 3s infinite}
+"""
+    chips = [("GOST 30333", 40), ("HAZARD ZONES", 196), ("PPE", 380)]
+    w = "".join(f'<rect x="{x}" y="306" width="{len(s)*13+26}" height="36" rx="18" fill="{SURFACE}" stroke="{LINE}"/>'
+                f'<text x="{x+13}" y="330" class="m" font-size="16" fill="{TEXT}">{s}</text>' for s, x in chips)
+    w += f'<g class="p"><circle cx="50" cy="366" r="7" fill="{RED}"/><text x="68" y="372" class="m" font-size="18" fill="{RED}">NO GROUNDS → NO ANSWER</text></g>'
+    return card("06", "ON-PREM · CHEMICAL SAFETY", "Chemical safety.", "Fully offline.",
+                ["Emergency cards and storage rules", "for a plant, each with its source."],
+                "github.com/ilyautov/hefest", "hefest.jpg", w, css,
+                "hefest: offline chemical safety workstation for an industrial plant")
+
+
+def consilium():
+    css = """
+@keyframes q{0%,75%{opacity:1}82%,88%{opacity:.25}95%,100%{opacity:1}}
+.q2{animation:q 5s infinite}
+"""
+    w = (f'<text x="40" y="330" class="b" font-size="22" fill="{TEXT}">verbatim quote</text>'
+         f'<text x="300" y="330" class="m" font-size="18" fill="{LIME}">VERIFIED ✓</text>'
+         f'<g class="q2"><text x="40" y="366" class="b" font-size="22" fill="{TEXT}">paraphrase</text>'
+         f'<text x="300" y="366" class="m" font-size="18" fill="{RED}">ABSTAIN</text></g>')
+    return card("07", "SKILL · MCP · DECISIONS", "A board of", "real thinkers.",
+                ["Quotes checked word for word against", "public-domain sources, or silence."],
+                "github.com/ilyautov/consilium-principis", "consilium.jpg", w, css,
+                "consilium-principis: an advisory board of historical thinkers with verified quotes")
+
+
+def rusvoice():
+    css = """
+@keyframes wave{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.35)}}
+.wv{transform-box:fill-box;transform-origin:center;animation:wave 1.4s ease-in-out infinite}
+"""
+    import math
+    bars = ""
+    for i in range(34):
+        x = 470 + i * 10.5
+        h = 30 + 120 * abs(math.sin(i * 0.55)) * (0.55 + 0.45 * math.sin(i * 0.21 + 1))
+        bars += (f'<rect class="wv" x="{x:.1f}" y="{190 - h/2:.1f}" width="5" height="{h:.1f}" rx="2.5" '
+                 f'fill="{AMBER}" opacity="{0.45 + 0.45 * (i % 5 == 0)}" style="animation-delay:{-(i*0.09):.2f}s"/>')
+    rows = [("ТЗ", "тэ-зэ"), ("MVP", "эм-ви-пи"), ("Knight", "Найт")]
+    w = ""
+    x = 40
+    for a, b in rows:
+        w += (f'<text x="{x}" y="350" class="b" font-size="22" fill="{MUTED}">{a}'
+              f'<tspan class="m" font-size="18" fill="{AMBER}" dx="10">→</tspan>'
+              f'<tspan fill="{TEXT}" dx="10">{b}</tspan></text>')
+        x += 40 + (len(a) + len(b)) * 12 + 60
+    return card("08", "CLI · RUSSIAN VOICE-OVER", "Your own voice.", "Read right.",
+                ["Stress, brands and abbreviations", "fixed before synthesis, visibly."],
+                "github.com/ilyautov/rusvoice", None, w, css,
+                "rusvoice: Russian voice-over in your own voice with a visible text layer", art=bars)
+
+
+def doc2md():
+    css = """
+@keyframes go{0%,60%{opacity:1;transform:none}70%{opacity:.3;transform:translateX(8px)}80%,100%{opacity:1;transform:none}}
+.go{animation:go 3s ease-in-out infinite}
+"""
+    sheets = ""
+    for i, (ext, x, y, r) in enumerate([("PDF", 560, 60, -8), ("XLSX", 610, 80, 4), ("DOCX", 590, 110, -2)]):
+        sheets += (f'<g transform="rotate({r} {x+90} {y+120})"><rect x="{x}" y="{y}" width="180" height="230" rx="8" '
+                   f'fill="{SURFACE}" stroke="{LINE}"/>'
+                   + "".join(f'<rect x="{x+22}" y="{y+56+j*22}" width="{136 - (j%3)*28}" height="6" rx="3" fill="{LINE}"/>' for j in range(6))
+                   + f'<text x="{x+22}" y="{y+36}" class="m" font-size="16" fill="{MUTED}">{ext}</text></g>')
+    sheets += (f'<rect x="700" y="170" width="110" height="64" rx="8" fill="{AMBER}"/>'
+               f'<text x="755" y="213" text-anchor="middle" class="d" font-size="40" fill="{BG}">.MD</text>')
+    w = (f'<text x="40" y="330" class="m" font-size="18" fill="{MUTED}">DOCX · XLSX · PPTX · PDF · EPUB</text>'
+         f'<g class="go"><text x="40" y="366" class="m" font-size="18" fill="{AMBER}">→ CLEAN MARKDOWN FOR THE AGENT</text></g>')
+    return card("09", "SKILL · CLI · DOCUMENTS", "Any document.", "Clean Markdown.",
+                ["Word, Excel, PowerPoint, PDF, EPUB", "converted before the agent reads them."],
+                "github.com/ilyautov/doc2md", None, w, css,
+                "doc2md: batch-converts office documents and PDFs to clean Markdown", art=sheets)
+
+
 def assets():
     out = [("hero", hero), ("card-humanizer-ru", humanizer), ("card-inn-check-ru", inn),
            ("card-cordon", cordon), ("card-small-business-ru", smb), ("mcp", mcp)]
     out += [(f"mcp-{f}", (lambda a=a: tile(*a))) for f, *a in TILES]
+    out += [("systems", systems_header), ("card-hefest", hefest), ("card-consilium-principis", consilium),
+            ("card-rusvoice", rusvoice), ("card-doc2md", doc2md)]
     return out
 
 

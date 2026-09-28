@@ -38,7 +38,14 @@ I build open-source AI tools that do actual work, not demos: agent skills, MCP s
 
 MCP servers that wire Claude, Cursor or Codex straight into the systems a Russian company runs on, over the official APIs: no browser, no scraping, a safety gate before anything gets written. Take a bundle or just the one service you need. The marketplace and business servers share one engine, [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core), so a safety fix lands in all of them at once. Method maps, API keys and the errors that eat the most time are written up per service at [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/), [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) and [moysklad-mcp-ru.aifrontier.tech](https://moysklad-mcp-ru.aifrontier.tech/).
 
-**Also**
+<a href="https://github.com/ilyautov/hefest"><img src="assets/systems.svg" width="100%" alt="Systems and tools: offline, on-prem, on your side"></a>
+
+<p>
+<a href="https://github.com/ilyautov/hefest"><img src="assets/card-hefest.svg" width="49%" alt="hefest: chemical safety for an industrial plant, fully offline"></a>
+<a href="https://github.com/ilyautov/consilium-principis"><img src="assets/card-consilium-principis.svg" width="49%" alt="consilium-principis: an advisory board of real thinkers with verified quotes"></a>
+<a href="https://github.com/ilyautov/rusvoice"><img src="assets/card-rusvoice.svg" width="49%" alt="rusvoice: Russian voice-over in your own voice, read right"></a>
+<a href="https://github.com/ilyautov/doc2md"><img src="assets/card-doc2md.svg" width="49%" alt="doc2md: any document to clean Markdown for the agent"></a>
+</p>
 
 [**hefest**](https://github.com/ilyautov/hefest). Chemical safety for an industrial plant, fully offline: emergency cards, hazard zones, storage compatibility, protective gear. It refuses to answer without grounds, because here an error costs somebody's health.
 
@@ -75,7 +82,7 @@ All of it plugs into Claude Code, Cursor, Codex and other agents. The full list,
 
 Общее ядро [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core): правка безопасности чинит все серверы сразу. Карты методов, где брать ключи и что значат частые ошибки, разобраны на [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/), [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) и [moysklad-mcp-ru.aifrontier.tech](https://moysklad-mcp-ru.aifrontier.tech/).
 
-**Ещё**
+**Системы и инструменты**
 
 [**hefest**](https://github.com/ilyautov/hefest). Химическая безопасность завода, целиком офлайн: аварийные карточки, зоны заражения, совместимость хранения, подбор СИЗ. Без оснований не отвечает: ошибка тут стоит здоровья.
 
