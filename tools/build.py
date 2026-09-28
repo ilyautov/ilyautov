@@ -373,8 +373,49 @@ def doc2md():
                 "doc2md: batch-converts office documents and PDFs to clean Markdown", art=sheets)
 
 
+# ---------- широкая карточка: маркетплейсы (MCP + скиллы продавца) ----------
+def marketplaces():
+    W, H = 1280, 470
+    css = """
+@keyframes lit{0%,70%{opacity:1}76%,82%{opacity:.35}88%,100%{opacity:1}}
+.k1{animation:lit 4s infinite}.k2{animation:lit 4s .5s infinite}.k3{animation:lit 4s 1s infinite}.k4{animation:lit 4s 1.5s infinite}
+"""
+    mk = [("WILDBERRIES", "307"), ("OZON", "441+45"), ("YANDEX MARKET", "165"), ("AVITO", "64")]
+    art = ""
+    for i, (n, c) in enumerate(mk):
+        x, y = 700 + (i % 2) * 262, 70 + (i // 2) * 104
+        art += (f'<g class="k{i+1}"><rect x="{x}" y="{y}" width="246" height="88" rx="10" fill="{SURFACE}" stroke="{AMBER}"/>'
+                f'<text x="{x+18}" y="{y+32}" class="m" font-size="16" fill="{MUTED}">{n}</text>'
+                f'<text x="{x+16}" y="{y+74}" class="d" font-size="40" fill="{AMBER}">{c}<tspan class="m" font-size="14" fill="{MUTED}" dx="10">METHODS</tspan></text></g>')
+    art += f'<text x="700" y="304" class="m" font-size="16" fill="{AMBER}">+ SELLER SKILLS: TASKS, NOT API METHODS</text>'
+    skills = ["stock-reconcile", "unit-economics", "product-listing", "sales-export", "avito-listings", "dropshipping-intake"]
+    x, y = 700, 322
+    for s in skills:
+        w = len(s) * 11.2 + 28
+        if x + w > 1230:
+            x, y = 700, y + 46
+        art += (f'<rect x="{x}" y="{y}" width="{w:.0f}" height="36" rx="18" fill="{BG}" stroke="{LINE}"/>'
+                f'<text x="{x+14}" y="{y+24}" class="m" font-size="16" fill="{TEXT}" style="text-transform:none">{s}</text>')
+        x += w + 10
+    body = f"""
+<defs><clipPath id="c"><rect width="{W}" height="{H}" rx="14"/></clipPath></defs>
+<g clip-path="url(#c)">
+ <rect width="{W}" height="{H}" fill="{BG}"/>
+ <rect x="668" y="0" width="{W-668}" height="{H}" fill="{SURFACE}" opacity=".55"/>
+ {art}
+ <text x="56" y="70" class="m" font-size="19" fill="{AMBER}">★ FLAGSHIP / MCP + SKILLS FOR SELLERS</text>
+ <text x="53" y="150" class="d" font-size="76" fill="{TEXT}">Seller cabinets</text>
+ <text x="53" y="222" class="d" font-size="76" fill="{AMBER}">inside your agent.</text>
+ {lines(56, 272, ["Wildberries, Ozon, Yandex Market and Avito", "over the official Seller APIs. No browser,", "no scraping, a gate before every write."], "b", 25, MUTED, 34)}
+ <line x1="56" y1="404" x2="620" y2="404" stroke="{LINE}"/>
+ <text x="56" y="440" class="m" font-size="19" fill="{TEXT}" style="text-transform:none">github.com/ilyautov/marketplaces-mcp-ru</text>
+ <rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{AMBER}"/>
+</g>"""
+    return svg(W, H, body, css, "marketplaces-mcp-ru and seller-skills-ru: seller cabinets of Wildberries, Ozon, Yandex Market and Avito inside your agent")
+
+
 def assets():
-    out = [("hero", hero), ("card-humanizer-ru", humanizer), ("card-inn-check-ru", inn),
+    out = [("hero", hero), ("card-marketplaces", marketplaces), ("card-humanizer-ru", humanizer), ("card-inn-check-ru", inn),
            ("card-cordon", cordon), ("card-small-business-ru", smb), ("mcp", mcp)]
     out += [(f"mcp-{f}", (lambda a=a: tile(*a))) for f, *a in TILES]
     out += [("systems", systems_header), ("card-hefest", hefest), ("card-consilium-principis", consilium),
