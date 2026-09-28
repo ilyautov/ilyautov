@@ -4,7 +4,7 @@
 .b{font-family:Onest,system-ui,sans-serif}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 
-@keyframes tick{0%,20%{opacity:0}30%,90%{opacity:1}100%{opacity:0}}
+@keyframes tick{0%,75%{opacity:1}80%,86%{opacity:0}92%,100%{opacity:1}}
 .t1{animation:tick 6s infinite}.t2{animation:tick 6s .5s infinite}
 </style>
 <defs>

@@ -4,8 +4,6 @@
 .b{font-family:Onest,system-ui,sans-serif}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 
-@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.n{animation:up .8s ease-out backwards}.n2{animation-delay:.25s}.n3{animation-delay:.5s}
 </style>
 <defs><clipPath id="c"><rect width="1280" height="330" rx="14"/></clipPath></defs>
 <g clip-path="url(#c)">

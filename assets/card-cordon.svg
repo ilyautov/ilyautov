@@ -4,8 +4,8 @@
 .b{font-family:Onest,system-ui,sans-serif}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 
-@keyframes call{0%,8%{opacity:0;transform:translateX(-12px)}16%,92%{opacity:1;transform:none}100%{opacity:0}}
-@keyframes stamp{0%,34%{opacity:0;transform:scale(1.8) rotate(-7deg)}40%,92%{opacity:1;transform:scale(1) rotate(-7deg)}100%{opacity:0;transform:scale(1) rotate(-7deg)}}
+@keyframes call{0%,70%{opacity:1;transform:none}74%,78%{opacity:0;transform:translateX(-12px)}84%,100%{opacity:1;transform:none}}
+@keyframes stamp{0%,70%{opacity:1;transform:scale(1) rotate(-7deg)}74%,88%{opacity:0;transform:scale(1.8) rotate(-7deg)}94%,100%{opacity:1;transform:scale(1) rotate(-7deg)}}
 .call{animation:call 5s ease-out infinite}
 .stamp{transform-box:fill-box;transform-origin:center;transform:rotate(-7deg);animation:stamp 5s cubic-bezier(.2,.9,.3,1.2) infinite}
 </style>

@@ -50,6 +50,9 @@ def lines(x, y, rows, cls, size, fill, gap):
 
 
 
+# Первый кадр каждой анимации — полная картинка: если анимация стоит, карточка всё равно законченная.
+# Только бесконечные анимации: одноразовые (появление с задержкой) Chrome в SVG-картинке
+# замораживает на первом кадре, и элемент остаётся невидимым (проверено на живом профиле).
 # Размеры шрифтов подобраны под показ на GitHub: шапка и полоса MCP ужимаются примерно
 # до 0.65, карточки в две колонки — до 0.48. Мельче 16px в карточке не читается.
 
@@ -59,11 +62,8 @@ def hero():
     css = """
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 @keyframes sweep{0%{transform:translateY(-120px)}100%{transform:translateY(640px)}}
-@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .caret{animation:blink 1.1s steps(1) infinite}
 .scan{animation:sweep 7s linear infinite}
-.s1,.s2,.s3{animation:rise .7s ease-out backwards}
-.s1{animation-delay:.3s}.s2{animation-delay:.6s}.s3{animation-delay:.9s}
 """
     stats = [("2612", "API METHODS OVER MCP"), ("34", "SMB SKILLS"), ("0", "AI INSIDE CORDON")]
     st = "".join(
@@ -124,9 +124,9 @@ def card(num, kicker, title, accent, body_rows, url, img, widget, wcss, alt, sol
 
 def humanizer():
     css = """
-@keyframes fill{0%,12%{width:90px}45%,88%{width:300px}100%{width:90px}}
-@keyframes lo{0%,20%{opacity:1}30%,90%{opacity:0}100%{opacity:1}}
-@keyframes hi{0%,25%{opacity:0}40%,88%{opacity:1}96%,100%{opacity:0}}
+@keyframes fill{0%,55%{width:300px}62%,70%{width:90px}95%,100%{width:300px}}
+@keyframes lo{0%,57%{opacity:0}60%,78%{opacity:1}82%,100%{opacity:0}}
+@keyframes hi{0%,55%{opacity:1}58%,80%{opacity:0}85%,100%{opacity:1}}
 .bar{animation:fill 6s ease-in-out infinite}.lo{animation:lo 6s infinite}.hi{animation:hi 6s infinite}
 """
     w = f"""
@@ -144,9 +144,9 @@ def humanizer():
 
 def inn():
     css = """
-@keyframes l1{0%,30%{opacity:1}34%,100%{opacity:.18}}
-@keyframes l2{0%,33%{opacity:.18}36%,63%{opacity:1}67%,100%{opacity:.18}}
-@keyframes l3{0%,66%{opacity:.18}70%,97%{opacity:1}100%{opacity:.18}}
+@keyframes l1{0%,40%{opacity:1}45%,55%{opacity:.2}60%,100%{opacity:1}}
+@keyframes l2{0%,55%{opacity:1}60%,70%{opacity:.2}75%,100%{opacity:1}}
+@keyframes l3{0%,70%{opacity:1}75%,85%{opacity:.2}90%,100%{opacity:1}}
 .g{animation:l1 4.5s infinite}.y{animation:l2 4.5s infinite}.r{animation:l3 4.5s infinite}
 """
     w = f"""
@@ -163,8 +163,8 @@ def inn():
 
 def cordon():
     css = """
-@keyframes call{0%,8%{opacity:0;transform:translateX(-12px)}16%,92%{opacity:1;transform:none}100%{opacity:0}}
-@keyframes stamp{0%,34%{opacity:0;transform:scale(1.8) rotate(-7deg)}40%,92%{opacity:1;transform:scale(1) rotate(-7deg)}100%{opacity:0;transform:scale(1) rotate(-7deg)}}
+@keyframes call{0%,70%{opacity:1;transform:none}74%,78%{opacity:0;transform:translateX(-12px)}84%,100%{opacity:1;transform:none}}
+@keyframes stamp{0%,70%{opacity:1;transform:scale(1) rotate(-7deg)}74%,88%{opacity:0;transform:scale(1.8) rotate(-7deg)}94%,100%{opacity:1;transform:scale(1) rotate(-7deg)}}
 .call{animation:call 5s ease-out infinite}
 .stamp{transform-box:fill-box;transform-origin:center;transform:rotate(-7deg);animation:stamp 5s cubic-bezier(.2,.9,.3,1.2) infinite}
 """
@@ -185,7 +185,7 @@ def cordon():
 
 def smb():
     css = """
-@keyframes tick{0%,20%{opacity:0}30%,90%{opacity:1}100%{opacity:0}}
+@keyframes tick{0%,75%{opacity:1}80%,86%{opacity:0}92%,100%{opacity:1}}
 .t1{animation:tick 6s infinite}.t2{animation:tick 6s .5s infinite}
 """
     rows = [("taxes, cash, payroll", "COMPUTED", LIME), ("the model's guess", "NEVER", RED)]
@@ -203,8 +203,6 @@ def smb():
 def mcp():
     W, H = 1280, 330
     css = """
-@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.n{animation:up .8s ease-out backwards}.n2{animation-delay:.25s}.n3{animation-delay:.5s}
 """
     cols = [("1022", "MARKETPLACES", "WB · Ozon · Yandex Market · Avito", "marketplaces-mcp-ru"),
             ("892", "ERP", "MoySklad: stock and documents", "moysklad-mcp-ru"),

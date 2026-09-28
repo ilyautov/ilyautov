@@ -4,9 +4,9 @@
 .b{font-family:Onest,system-ui,sans-serif}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 
-@keyframes fill{0%,12%{width:90px}45%,88%{width:300px}100%{width:90px}}
-@keyframes lo{0%,20%{opacity:1}30%,90%{opacity:0}100%{opacity:1}}
-@keyframes hi{0%,25%{opacity:0}40%,88%{opacity:1}96%,100%{opacity:0}}
+@keyframes fill{0%,55%{width:300px}62%,70%{width:90px}95%,100%{width:300px}}
+@keyframes lo{0%,57%{opacity:0}60%,78%{opacity:1}82%,100%{opacity:0}}
+@keyframes hi{0%,55%{opacity:1}58%,80%{opacity:0}85%,100%{opacity:1}}
 .bar{animation:fill 6s ease-in-out infinite}.lo{animation:lo 6s infinite}.hi{animation:hi 6s infinite}
 </style>
 <defs>
