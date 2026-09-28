@@ -15,8 +15,34 @@ BG, SURFACE, LINE = "#111814", "#19221c", "#39453b"
 TEXT, MUTED, AMBER, LIME, RED = "#eeece2", "#acb3a7", "#edb56d", "#cee19c", "#f8a198"
 
 
+SUBSET = ROOT / ".subset"   # урезанные под текст ассетов шрифты, собираются в main
+FONT_FILES = ["alumni-sans-latin-var.woff2", "alumni-sans-cyrillic-var.woff2",
+              "jetbrains-mono-latin-400-normal.woff2", "onest-latin-400-normal.woff2",
+              "onest-cyrillic-400-normal.woff2"]
+
+
 def b64(name):
-    return base64.b64encode((SRC / name).read_bytes()).decode()
+    p = SUBSET / name if (SUBSET / name).exists() else SRC / name
+    return base64.b64encode(p.read_bytes()).decode()
+
+
+def subset_fonts(texts):
+    """Режет шрифты до символов, которые реально есть в ассетах. Без fonttools — полные шрифты."""
+    import re, shutil, subprocess
+    chars = set()
+    for s in texts:
+        for m in re.findall(r"<text[^>]*>(.*?)</text>", s):
+            chars |= set(m) | set(m.upper()) | set(m.lower())
+    chars |= set("&;")
+    SUBSET.mkdir(exist_ok=True)
+    text = "".join(sorted(chars))
+    for f in FONT_FILES:
+        cmd = ["uvx", "--from", "fonttools", "--with", "brotli", "pyftsubset", str(SRC / f),
+               f"--text={text}", "--flavor=woff2", f"--output-file={SUBSET / f}"]
+        if not shutil.which("uvx") or subprocess.run(cmd, capture_output=True).returncode:
+            shutil.rmtree(SUBSET, ignore_errors=True)
+            print("fonttools недоступен: шрифты вшиваются целиком")
+            return
 
 
 def fonts():
@@ -199,39 +225,70 @@ def smb():
                 "small-business-ru — 34 AI skills for Russian small business")
 
 
-# ---------- полоса MCP ----------
+# ---------- заголовок раздела MCP ----------
 def mcp():
-    W, H = 1280, 330
-    css = """
-"""
-    cols = [("1022", "MARKETPLACES", "WB · Ozon · Yandex Market · Avito", "marketplaces-mcp-ru"),
-            ("892", "ERP", "MoySklad: stock and documents", "moysklad-mcp-ru"),
-            ("698", "BUSINESS", "hh.ru · VK · Diadoc · SBIS · ZNAK", "business-mcp-ru")]
-    cells = ""
-    for i, (n, k, d, repo) in enumerate(cols):
-        x = 64 + i * 400
-        cells += (f'<g class="n n{i+1}"><text x="{x}" y="112" class="m" font-size="17" fill="{AMBER}">{k}</text>'
-                  f'<text x="{x-4}" y="200" class="d" font-size="110" fill="{TEXT}">{n}</text>'
-                  f'<text x="{x}" y="236" class="b" font-size="21" fill="{MUTED}">{escape(d)}</text>'
-                  f'<text x="{x}" y="268" class="m" font-size="16" fill="{TEXT}">{repo}</text></g>')
-        if i:
-            cells += f'<line x1="{x-36}" y1="92" x2="{x-36}" y2="272" stroke="{LINE}"/>'
+    W, H = 1280, 210
     body = f"""
 <defs><clipPath id="c"><rect width="{W}" height="{H}" rx="14"/></clipPath></defs>
 <g clip-path="url(#c)">
  <rect width="{W}" height="{H}" fill="{SURFACE}"/>
- <text x="64" y="58" class="m" font-size="18" fill="{MUTED}">05 / MCP INTO RUSSIAN BUSINESS SYSTEMS · API METHODS</text>
- {cells}
- <text x="64" y="308" class="m" font-size="15" fill="{MUTED}">NO BROWSER · NO SCRAPING · SAFETY GATE BEFORE EVERY WRITE</text>
+ <text x="64" y="62" class="m" font-size="18" fill="{AMBER}">05 / MCP SERVERS · 2612 API METHODS</text>
+ <text x="61" y="140" class="d" font-size="70" fill="{TEXT}">Into Russian business.<tspan fill="{AMBER}" dx="20">Bundle or solo.</tspan></text>
+ <text x="64" y="186" class="m" font-size="16" fill="{MUTED}">OFFICIAL APIS · NO BROWSER · NO SCRAPING · SAFETY GATE BEFORE EVERY WRITE</text>
  <rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{LINE}"/>
 </g>"""
-    return svg(W, H, body, css, "MCP servers: 1022 marketplace, 892 MoySklad and 698 business API methods")
+    return svg(W, H, body, "", "MCP servers for Russian business systems: take a bundle or one service")
+
+
+# ---------- плитки MCP-серверов ----------
+TILES = [
+    # (файл, группа, название, число, единица, репо, сборник)
+    ("marketplaces", "BUNDLE · 4 SERVERS", "Marketplaces", "1022", "METHODS", "marketplaces-mcp-ru", True),
+    ("ozon", "MARKETPLACE", "Ozon Seller", "441", "+ 45 ADS", "ozon-mcp-ru", False),
+    ("wildberries", "MARKETPLACE", "Wildberries", "307", "METHODS", "wildberries-mcp-ru", False),
+    ("yandex-market", "MARKETPLACE", "Yandex Market", "165", "METHODS", "yandex-market-mcp-ru", False),
+    ("avito", "MARKETPLACE", "Avito", "64", "METHODS", "avito-mcp-ru", False),
+    ("moysklad", "ERP", "MoySklad", "892", "METHODS", "moysklad-mcp-ru", False),
+    ("business", "BUNDLE · 5 SERVERS", "Business", "698", "METHODS", "business-mcp-ru", True),
+    ("hh", "HIRING", "hh.ru", "133", "METHODS", "hh-mcp-ru", False),
+    ("vk", "SOCIAL · SHOP · ADS", "VK", "373", "METHODS", "vk-mcp-ru", False),
+    ("diadoc", "EDI · KONTUR", "Diadoc", "114", "METHODS", "diadoc-mcp-ru", False),
+    ("sbis", "EDI · SABY", "SBIS", "45", "COMMANDS", "sbis-mcp-ru", False),
+    ("chestny-znak", "PRODUCT MARKING", "Chestny ZNAK", "33", "METHODS", "chestny-znak-mcp-ru", False),
+]
+
+
+def tile(group, name, num, unit, repo, bundle):
+    W, H = 420, 250
+    edge = AMBER if bundle else LINE
+    bg = BG if bundle else SURFACE
+    body = f"""
+<defs><clipPath id="c"><rect width="{W}" height="{H}" rx="12"/></clipPath></defs>
+<g clip-path="url(#c)">
+ <rect width="{W}" height="{H}" fill="{bg}"/>
+ <text x="28" y="48" class="m" font-size="18" fill="{AMBER if bundle else MUTED}">{escape(group)}</text>
+ <text x="26" y="112" class="d" font-size="56" fill="{TEXT}">{escape(name)}</text>
+ <text x="25" y="190" class="d" font-size="84" fill="{AMBER}">{num}<tspan class="m" font-size="18" fill="{MUTED}" dx="16">{escape(unit)}</tspan></text>
+ <text x="28" y="230" class="m" font-size="18" fill="{TEXT}" style="text-transform:none">{repo}</text>
+ <rect x="1" y="1" width="{W-2}" height="{H-2}" rx="12" fill="none" stroke="{edge}" stroke-width="{2 if bundle else 1}"/>
+</g>"""
+    return svg(W, H, body, "", f"{repo}: {name}, {num} {unit.lower()}")
+
+
+def assets():
+    out = [("hero", hero), ("card-humanizer-ru", humanizer), ("card-inn-check-ru", inn),
+           ("card-cordon", cordon), ("card-small-business-ru", smb), ("mcp", mcp)]
+    out += [(f"mcp-{f}", (lambda a=a: tile(*a))) for f, *a in TILES]
+    return out
 
 
 if __name__ == "__main__":
+    import shutil
     OUT.mkdir(exist_ok=True)
-    for name, fn in [("hero", hero), ("card-humanizer-ru", humanizer), ("card-inn-check-ru", inn),
-                     ("card-cordon", cordon), ("card-small-business-ru", smb), ("mcp", mcp)]:
+    shutil.rmtree(SUBSET, ignore_errors=True)
+    subset_fonts([fn() for _, fn in assets()])
+    for name, fn in assets():
         p = OUT / f"{name}.svg"
         p.write_text(fn(), encoding="utf-8")
         print(f"{p.name}: {p.stat().st_size // 1024} KB")
+    shutil.rmtree(SUBSET, ignore_errors=True)

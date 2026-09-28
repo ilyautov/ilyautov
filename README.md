@@ -19,13 +19,24 @@ I build open-source AI tools that do actual work, not demos: agent skills, MCP s
 
 [**small-business-ru**](https://github.com/ilyautov/small-business-ru) is 34 skills for Russian small businesses: taxes, cash, contracts, checking a counterparty. The numbers get computed, not guessed. [small-business-ru.aifrontier.tech](https://small-business-ru.aifrontier.tech/)
 
-<a href="https://github.com/ilyautov/marketplaces-mcp-ru"><img src="assets/mcp.svg" width="100%" alt="MCP servers: 1022 methods for marketplaces, 892 for MoySklad, 698 for business systems"></a>
+<a href="https://github.com/ilyautov/marketplaces-mcp-ru"><img src="assets/mcp.svg" width="100%" alt="MCP servers for Russian business systems: a bundle or one service at a time"></a>
 
-[**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru) wires Claude or Cursor straight into Wildberries, Ozon, Yandex Market and Avito: sales, orders, stock, prices and finance over the Seller APIs, no browser, no scraping. One marketplace at a time if that is all you need: [ozon](https://github.com/ilyautov/ozon-mcp-ru), [wildberries](https://github.com/ilyautov/wildberries-mcp-ru), [yandex-market](https://github.com/ilyautov/yandex-market-mcp-ru), [avito](https://github.com/ilyautov/avito-mcp-ru).
+<p>
+<a href="https://github.com/ilyautov/marketplaces-mcp-ru"><img src="assets/mcp-marketplaces.svg" width="32%" alt="marketplaces-mcp-ru"></a>
+<a href="https://github.com/ilyautov/ozon-mcp-ru"><img src="assets/mcp-ozon.svg" width="32%" alt="ozon-mcp-ru"></a>
+<a href="https://github.com/ilyautov/wildberries-mcp-ru"><img src="assets/mcp-wildberries.svg" width="32%" alt="wildberries-mcp-ru"></a>
+<a href="https://github.com/ilyautov/yandex-market-mcp-ru"><img src="assets/mcp-yandex-market.svg" width="32%" alt="yandex-market-mcp-ru"></a>
+<a href="https://github.com/ilyautov/avito-mcp-ru"><img src="assets/mcp-avito.svg" width="32%" alt="avito-mcp-ru"></a>
+<a href="https://github.com/ilyautov/moysklad-mcp-ru"><img src="assets/mcp-moysklad.svg" width="32%" alt="moysklad-mcp-ru"></a>
+<a href="https://github.com/ilyautov/business-mcp-ru"><img src="assets/mcp-business.svg" width="32%" alt="business-mcp-ru"></a>
+<a href="https://github.com/ilyautov/hh-mcp-ru"><img src="assets/mcp-hh.svg" width="32%" alt="hh-mcp-ru"></a>
+<a href="https://github.com/ilyautov/vk-mcp-ru"><img src="assets/mcp-vk.svg" width="32%" alt="vk-mcp-ru"></a>
+<a href="https://github.com/ilyautov/diadoc-mcp-ru"><img src="assets/mcp-diadoc.svg" width="32%" alt="diadoc-mcp-ru"></a>
+<a href="https://github.com/ilyautov/sbis-mcp-ru"><img src="assets/mcp-sbis.svg" width="32%" alt="sbis-mcp-ru"></a>
+<a href="https://github.com/ilyautov/chestny-znak-mcp-ru"><img src="assets/mcp-chestny-znak.svg" width="32%" alt="chestny-znak-mcp-ru"></a>
+</p>
 
-[**moysklad-mcp-ru**](https://github.com/ilyautov/moysklad-mcp-ru) does the same for MoySklad, the cloud ERP most Russian retail keeps its stock and trade documents in: 892 methods behind 10 generic tools, a safety gate before anything gets written and a draft before anything gets posted.
-
-[**business-mcp-ru**](https://github.com/ilyautov/business-mcp-ru) covers the rest of what a Russian company runs on: [hh.ru](https://github.com/ilyautov/hh-mcp-ru) hiring, [VK](https://github.com/ilyautov/vk-mcp-ru), the legally binding EDI operators [Diadoc](https://github.com/ilyautov/diadoc-mcp-ru) and [SBIS](https://github.com/ilyautov/sbis-mcp-ru), and [Chestny ZNAK](https://github.com/ilyautov/chestny-znak-mcp-ru) product marking. They share one engine, [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core), so a safety fix lands in all of them at once. Method maps, API keys and the errors that eat the most time are written up per service at [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) and [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/).
+MCP servers that wire Claude, Cursor or Codex straight into the systems a Russian company runs on, over the official APIs: no browser, no scraping, a safety gate before anything gets written. Take a bundle or just the one service you need. The marketplace and business servers share one engine, [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core), so a safety fix lands in all of them at once. Method maps, API keys and the errors that eat the most time are written up per service at [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/), [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) and [moysklad-mcp-ru.aifrontier.tech](https://moysklad-mcp-ru.aifrontier.tech/).
 
 **Also**
 
@@ -56,11 +67,13 @@ All of it plugs into Claude Code, Cursor, Codex and other agents. The full list,
 
 [**small-business-ru**](https://github.com/ilyautov/small-business-ru): 34 скилла для малого бизнеса: налоги, деньги, договоры, проверка контрагента. Цифры считает код, а не выдумывает модель. [small-business-ru.aifrontier.tech](https://small-business-ru.aifrontier.tech/)
 
-[**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru) подключает Claude или Cursor прямо к кабинетам Wildberries, Ozon, Яндекс Маркета и Авито: продажи, заказы, остатки, цены, финансы через Seller API, без браузера и парсинга. Нужен один маркетплейс, ставится один: [ozon](https://github.com/ilyautov/ozon-mcp-ru), [wildberries](https://github.com/ilyautov/wildberries-mcp-ru), [yandex-market](https://github.com/ilyautov/yandex-market-mcp-ru), [avito](https://github.com/ilyautov/avito-mcp-ru).
+**MCP-серверы** подключают Claude, Cursor или Codex прямо к системам, на которых работает российская компания, через официальные API: без браузера и парсинга, с гейтом безопасности перед любой записью. Можно взять сборник, а можно один нужный сервис:
 
-[**moysklad-mcp-ru**](https://github.com/ilyautov/moysklad-mcp-ru): то же для МойСклада, на котором держится учёт розницы и опта. 892 метода через десять общих инструментов, гейт безопасности перед любой записью и черновик прежде, чем документ будет проведён.
+- маркетплейсы: сборник [marketplaces-mcp-ru](https://github.com/ilyautov/marketplaces-mcp-ru) (1022 метода) или по отдельности [Ozon](https://github.com/ilyautov/ozon-mcp-ru), [Wildberries](https://github.com/ilyautov/wildberries-mcp-ru), [Яндекс Маркет](https://github.com/ilyautov/yandex-market-mcp-ru), [Авито](https://github.com/ilyautov/avito-mcp-ru);
+- учёт: [МойСклад](https://github.com/ilyautov/moysklad-mcp-ru), 892 метода через десять общих инструментов, черновик прежде, чем документ будет проведён;
+- деловые сервисы: сборник [business-mcp-ru](https://github.com/ilyautov/business-mcp-ru) (698 методов) или по отдельности [hh.ru](https://github.com/ilyautov/hh-mcp-ru), [VK](https://github.com/ilyautov/vk-mcp-ru), [Диадок](https://github.com/ilyautov/diadoc-mcp-ru), [СБИС](https://github.com/ilyautov/sbis-mcp-ru), [Честный знак](https://github.com/ilyautov/chestny-znak-mcp-ru).
 
-[**business-mcp-ru**](https://github.com/ilyautov/business-mcp-ru): всё остальное, на чём держится российская компания. Наём в [hh.ru](https://github.com/ilyautov/hh-mcp-ru), [VK](https://github.com/ilyautov/vk-mcp-ru), юридически значимое ЭДО [Диадок](https://github.com/ilyautov/diadoc-mcp-ru) и [СБИС](https://github.com/ilyautov/sbis-mcp-ru), маркировка в [Честном знаке](https://github.com/ilyautov/chestny-znak-mcp-ru). Общее ядро [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core): правка безопасности чинит все серверы сразу. Карты методов, где брать ключи и что значат частые ошибки, разобраны на [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) и [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/).
+Общее ядро [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core): правка безопасности чинит все серверы сразу. Карты методов, где брать ключи и что значат частые ошибки, разобраны на [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/), [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) и [moysklad-mcp-ru.aifrontier.tech](https://moysklad-mcp-ru.aifrontier.tech/).
 
 **Ещё**
 
