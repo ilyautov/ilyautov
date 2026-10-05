@@ -1,4 +1,4 @@
-<a href="https://aifrontier.tech"><img src="assets/hero.svg" width="100%" alt="Ilya Utov, AI Frontier lab: AI tools that do the actual work. 2612 API methods over MCP, 34 skills for small business, no AI inside Cordon."></a>
+<a href="https://aifrontier.tech"><img src="assets/hero.svg" width="100%" alt="Ilya Utov, AI Frontier lab: AI tools that do the actual work. 2479 API methods over MCP, 34 skills for small business, no AI inside Cordon."></a>
 
 I build open-source AI tools that do actual work, not demos: agent skills, MCP servers and systems that run inside a company's perimeter. The math runs in code, the data comes from real registries, and it all ships under MIT or Apache 2.0. I run [**AI Frontier**](https://aifrontier.tech), a small lab that puts practical AI into real companies.
 
@@ -23,7 +23,7 @@ I build open-source AI tools that do actual work, not demos: agent skills, MCP s
 
 - маркетплейсы: сборник [marketplaces-mcp-ru](https://github.com/ilyautov/marketplaces-mcp-ru) (1022 метода) или по отдельности [Ozon](https://github.com/ilyautov/ozon-mcp-ru), [Wildberries](https://github.com/ilyautov/wildberries-mcp-ru), [Яндекс Маркет](https://github.com/ilyautov/yandex-market-mcp-ru), [Авито](https://github.com/ilyautov/avito-mcp-ru);
 - учёт: [МойСклад](https://github.com/ilyautov/moysklad-mcp-ru), 892 метода через десять общих инструментов, черновик прежде, чем документ будет проведён;
-- деловые сервисы: сборник [business-mcp-ru](https://github.com/ilyautov/business-mcp-ru) (698 методов) или по отдельности [hh.ru](https://github.com/ilyautov/hh-mcp-ru), [VK](https://github.com/ilyautov/vk-mcp-ru), [Диадок](https://github.com/ilyautov/diadoc-mcp-ru), [СБИС](https://github.com/ilyautov/sbis-mcp-ru), [Честный знак](https://github.com/ilyautov/chestny-znak-mcp-ru).
+- деловые сервисы: сборник [business-mcp-ru](https://github.com/ilyautov/business-mcp-ru) (565 методов) или по отдельности [VK](https://github.com/ilyautov/vk-mcp-ru), [Диадок](https://github.com/ilyautov/diadoc-mcp-ru), [СБИС](https://github.com/ilyautov/sbis-mcp-ru), [Честный знак](https://github.com/ilyautov/chestny-znak-mcp-ru).
 
 Общее ядро [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core): правка безопасности чинит все серверы сразу. Карты методов, где брать ключи и что значат частые ошибки, разобраны на [marketplaces-mcp-ru.aifrontier.tech](https://marketplaces-mcp-ru.aifrontier.tech/), [business-mcp-ru.aifrontier.tech](https://business-mcp-ru.aifrontier.tech/) и [moysklad-mcp-ru.aifrontier.tech](https://moysklad-mcp-ru.aifrontier.tech/).
 
@@ -72,7 +72,6 @@ I build open-source AI tools that do actual work, not demos: agent skills, MCP s
 <a href="https://github.com/ilyautov/avito-mcp-ru"><img src="assets/mcp-avito.svg" width="32%" alt="avito-mcp-ru"></a>
 <a href="https://github.com/ilyautov/moysklad-mcp-ru"><img src="assets/mcp-moysklad.svg" width="32%" alt="moysklad-mcp-ru"></a>
 <a href="https://github.com/ilyautov/business-mcp-ru"><img src="assets/mcp-business.svg" width="32%" alt="business-mcp-ru"></a>
-<a href="https://github.com/ilyautov/hh-mcp-ru"><img src="assets/mcp-hh.svg" width="32%" alt="hh-mcp-ru"></a>
 <a href="https://github.com/ilyautov/vk-mcp-ru"><img src="assets/mcp-vk.svg" width="32%" alt="vk-mcp-ru"></a>
 <a href="https://github.com/ilyautov/diadoc-mcp-ru"><img src="assets/mcp-diadoc.svg" width="32%" alt="diadoc-mcp-ru"></a>
 <a href="https://github.com/ilyautov/sbis-mcp-ru"><img src="assets/mcp-sbis.svg" width="32%" alt="sbis-mcp-ru"></a>

@@ -28,6 +28,6 @@
  <rect class="caret" x="622" y="214" width="32" height="76" fill="#edb56d"/>
  <text x="64" y="338" class="b" font-size="23" fill="#acb3a7">Agent skills, MCP servers and on-prem systems.</text><text x="64" y="370" class="b" font-size="23" fill="#acb3a7">The math runs in code, the data comes from registries.</text>
  <line x1="64" y1="386" x2="760" y2="386" stroke="#39453b"/>
- <g class="s1"><text x="64" y="440" class="d" font-size="62" fill="#edb56d">2612</text><text x="64" y="474" class="m" font-size="16" fill="#acb3a7">API METHODS OVER MCP</text></g><g class="s2"><text x="314" y="440" class="d" font-size="62" fill="#edb56d">34</text><text x="314" y="474" class="m" font-size="16" fill="#acb3a7">SMB SKILLS</text></g><g class="s3"><text x="564" y="440" class="d" font-size="62" fill="#edb56d">0</text><text x="564" y="474" class="m" font-size="16" fill="#acb3a7">AI INSIDE CORDON</text></g>
+ <g class="s1"><text x="64" y="440" class="d" font-size="62" fill="#edb56d">2479</text><text x="64" y="474" class="m" font-size="16" fill="#acb3a7">API METHODS OVER MCP</text></g><g class="s2"><text x="314" y="440" class="d" font-size="62" fill="#edb56d">34</text><text x="314" y="474" class="m" font-size="16" fill="#acb3a7">SMB SKILLS</text></g><g class="s3"><text x="564" y="440" class="d" font-size="62" fill="#edb56d">0</text><text x="564" y="474" class="m" font-size="16" fill="#acb3a7">AI INSIDE CORDON</text></g>
  <rect x=".5" y=".5" width="1279" height="519" rx="14" fill="none" stroke="#39453b"/>
 </g></svg>
